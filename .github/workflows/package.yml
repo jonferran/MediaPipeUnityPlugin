@@ -161,7 +161,7 @@ jobs:
           path: Packages/com.github.homuler.mediapipe/Runtime/Plugins/iOS/MediaPipeUnity.framework
 
   windows-build:
-    runs-on: windows-2019
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
         with:
