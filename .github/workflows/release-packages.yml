@@ -8,6 +8,7 @@ on:
 jobs:
   package-for-development:
     uses: ./.github/workflows/package.yml
+    runs-on: windows-latest
     with:
       ref: ${{ github.event.ref }}
       packageName: package-for-development
@@ -15,11 +16,12 @@ jobs:
       androidBuildArgs: '--android arm64 --android_ndk_api_level 21'
       macosBuildArgs: '--desktop cpu --opencv cmake --macos_universal'
       iosBuildArgs: '--ios arm64 --opencv cmake'
-      windowsBuildArgs: '--desktop cpu --opencv cmake --version LATEST'
+      windowsBuildArgs: '--desktop cpu --opencv cmake'
     secrets: inherit
 
   package-for-production:
     uses: ./.github/workflows/package.yml
+    runs-on: windows-latest
     with:
       ref: ${{ github.event.ref }}
       packageName: package-for-production
@@ -27,5 +29,5 @@ jobs:
       androidBuildArgs: '--linkopt="-s" --android arm64 --android_ndk_api_level 21'
       macosBuildArgs: '--linkopt="-s" --desktop cpu --opencv cmake --macos_universal'
       iosBuildArgs: '--linkopt="-s" --ios arm64 --opencv cmake'
-      windowsBuildArgs: '--desktop cpu --opencv cmake --version LATEST'
+      windowsBuildArgs: '--desktop cpu --opencv cmake'
     secrets: inherit
