@@ -8,7 +8,6 @@ on:
 jobs:
   package-for-development:
     uses: ./.github/workflows/package.yml
-    runs-on: windows-latest
     with:
       ref: ${{ github.event.ref }}
       packageName: package-for-development
@@ -21,7 +20,6 @@ jobs:
 
   package-for-production:
     uses: ./.github/workflows/package.yml
-    runs-on: windows-latest
     with:
       ref: ${{ github.event.ref }}
       packageName: package-for-production
