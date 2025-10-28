@@ -15,7 +15,7 @@ jobs:
       androidBuildArgs: '--android arm64 --android_ndk_api_level 21'
       macosBuildArgs: '--desktop cpu --opencv cmake --macos_universal'
       iosBuildArgs: '--ios arm64 --opencv cmake'
-      windowsBuildArgs: '--desktop cpu --opencv cmake'
+      windowsBuildArgs: '--desktop cpu --opencv cmake --version LATEST'
     secrets: inherit
 
   package-for-production:
@@ -27,5 +27,5 @@ jobs:
       androidBuildArgs: '--linkopt="-s" --android arm64 --android_ndk_api_level 21'
       macosBuildArgs: '--linkopt="-s" --desktop cpu --opencv cmake --macos_universal'
       iosBuildArgs: '--linkopt="-s" --ios arm64 --opencv cmake'
-      windowsBuildArgs: '--desktop cpu --opencv cmake'
+      windowsBuildArgs: '--desktop cpu --opencv cmake --version LATEST'
     secrets: inherit
